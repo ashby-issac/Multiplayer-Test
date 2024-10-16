@@ -1,7 +1,13 @@
 {
-    "name": "PhotonRealtime",
+    "name": "Scripts",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:831409e8f9d13b5479a3baef9822ad34",
+        "GUID:7024f760fc566cf45a16d2c838e22b2d",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:57c32fc907df0f54e8e6e8f0d2488336",
+        "GUID:a8776e11d2c402f4c915849d5c182b2c"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

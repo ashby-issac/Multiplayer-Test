@@ -63,6 +63,18 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public override void OnConnectedToMaster()
+    {
+        Debug.Log($":: OnConnectedToMaster");
+
+        roomCanvases.RoomCreationCanvas.CreateRoomMenu.ShowConnectedMsg();
+        if (!PhotonNetwork.InLobby && !PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log($":: !PhotonNetwork.InLobby :: JoiningLobby");
+            PhotonNetwork.JoinLobby();
+        }
+    }
+
     public override void OnCreatedRoom()
     {
         Debug.Log($"Created Room Successfully");

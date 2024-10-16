@@ -9,9 +9,15 @@ using UnityEngine.UI;
 public class CreateRoomMenu : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI roomName;
+    [SerializeField] private TextMeshProUGUI connectedMsg;
     [SerializeField] private Button createRoomBtn;
 
     private RoomCanvases roomCanvases;
+
+    private void Awake()
+    {
+        connectedMsg.gameObject.SetActive(false);
+    }
 
     private void OnEnable()
     {
@@ -44,5 +50,10 @@ public class CreateRoomMenu : MonoBehaviour
         PhotonNetwork.KeepAliveInBackground = SettingsSO.timeout;
 
         PhotonNetwork.JoinOrCreateRoom($"{roomName.text}", options, TypedLobby.Default);
+    }
+
+    public void ShowConnectedMsg()
+    {
+        connectedMsg.gameObject.SetActive(true);
     }
 }

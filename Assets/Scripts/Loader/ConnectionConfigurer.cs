@@ -15,22 +15,4 @@ public class ConnectionConfigurer : MonoBehaviourPunCallbacks
 
         Debug.Log($":: Connect to the server using the provided settings");
     }
-
-    public override void OnConnectedToMaster()
-    {
-        Debug.Log($":: OnConnectedToMaster");
-
-        if (!PhotonNetwork.InLobby && !PhotonNetwork.IsMasterClient)
-        {
-            Debug.Log($":: !PhotonNetwork.InLobby :: JoiningLobby");
-            PhotonNetwork.JoinLobby();
-        }
-    }
-
-    public override void OnDisconnected(DisconnectCause cause)
-    {
-        base.OnDisconnected(cause);
-
-        Debug.Log($":: OnDisconnected due to {cause.ToString()}");
-    }
 }
